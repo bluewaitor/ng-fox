@@ -1,20 +1,19 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import {NgModule, ModuleWithProviders} from '@angular/core';
 
-import { HelloModule } from './hello/hello.module';
+// import modules
 
-
-export { HelloModule } from './hello/hello.module';
+// export modules
 
 @NgModule({
-    exports: [
-        HelloModule
-    ]
-  })
-  export class NgFoxModule {
-  
-    static forRoot(): ModuleWithProviders {
-      return {
-        ngModule: NgFoxModule,
-      };
-    }
+  exports: [
+
+  ]
+})
+export class NgFoxModule {
+
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: NgFoxModule,
+    };
   }
+}
