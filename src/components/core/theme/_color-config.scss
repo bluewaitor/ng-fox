@@ -1,0 +1,70 @@
+
+@function get_inverse_color($color) {
+  @if red($color) + green($color) + blue($color) > 382.5 {
+    @return rgba(0, 0, 0, .8);
+  } @else {
+    @return rgba(255, 255, 255, 1);
+  }
+}
+
+// 主题色
+$spring: (
+  default: #eeeeee,
+  primary: #0099FF,
+  secondary: #CCCCCC,
+  success: #00FF99,
+  info: #00CCFF,
+  warning: #FF9900,
+  danger: #FF0033,
+);
+
+$summer: (
+  default: #009911,
+  primary: #009922,
+  secondary: #009933,
+  success: #009944,
+  info: #009955,
+  warning: #009966,
+  danger: #009977,
+);
+
+// 所有主题
+$themes: (
+  spring: $spring,
+  summer: $summer
+);
+
+@function get_theme($theme) {
+  @return map_get($themes, $theme);
+}
+
+$default-theme: spring;
+
+
+// 某个主题中的颜色
+$base-colors: (
+  default: map_get(get_theme($default-theme), default),
+  primary: map_get(get_theme($default-theme), primary),
+  secondary: map_get(get_theme($default-theme), secondary),
+  success: map_get(get_theme($default-theme), success),
+  info: map_get(get_theme($default-theme), info),
+  warning: map_get(get_theme($default-theme), warning),
+  danger: map_get(get_theme($default-theme), danger),
+);
+
+
+$primary-color: map_get($base-colors, primary);
+$secondary-color: map_get($base-colors, secondary);
+
+
+@each $key, $value in $base-colors {
+  .#{$key} {
+    color: $value;
+    &:hover {
+      color: lighten($value, 10%);
+    }
+    &:focus, &:active {
+      color: darken($value, 10%);
+    }
+  }
+}

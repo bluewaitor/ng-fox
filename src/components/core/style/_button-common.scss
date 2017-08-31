@@ -1,0 +1,9 @@
+@import "./vendor-prefixes";
+
+@mixin fox-button-reset {
+  @include user-select;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}

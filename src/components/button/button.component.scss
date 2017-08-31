@@ -1,0 +1,131 @@
+@import "../core/style/button-common";
+@import "../core/theme/color-config";
+
+$fox-btn-font-size: 14px;
+$fox-btn-padding: 0 14px !default;
+$fox-btn-min-width: 32px !default;
+$fox-btn-margin: 0 !default;
+$fox-btn-line-height: 2 !default;
+$fox-btn-border-radius: 4px !default;
+$fox-btn-prefix: fox-btn;
+
+@mixin generate-class($suffix, $color) {
+  &.#{$fox-btn-prefix}-#{$suffix} {
+    color: get_inverse_color($color);
+    background-color: $color;
+    border: 1px solid $color;
+    &:not([disabled]):hover, &:not([disabled]):focus {
+      @if(lightness($color) > 50) {
+        background-color: darken($color, 8%);
+      } @else {
+        background-color: lighten($color, 10%);
+      }
+    }
+
+    &:not([disabled]):active {
+      background-color: darken($color, 10%);
+      border-color: darken($color, 10%);
+    }
+
+    &.#{$fox-btn-prefix}-clicked:after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      bottom: -1px;
+      right: -1px;
+      border-radius: inherit;
+      border: 0 solid $color;
+      opacity: .5;
+      animation: buttonEffect .3s;
+      display: block;
+    }
+
+  }
+}
+
+@keyframes buttonEffect {
+  to {
+    opacity: 0;
+    top: -6px;
+    left: -6px;
+    bottom: -6px;
+    right: -6px;
+    border-width: 6px;
+  }
+}
+
+.#{$fox-btn-prefix} {
+
+  box-sizing: border-box;
+  position: relative;
+
+  @include fox-button-reset();
+
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align: center;
+  margin: $fox-btn-margin;
+  min-width: $fox-btn-min-width;
+  line-height: $fox-btn-line-height;
+  padding: $fox-btn-padding;
+  @include border-radius($fox-btn-border-radius);
+
+  color: currentColor;
+  @include transition(all .3s);
+
+  touch-action: manipulation;
+
+  // 生成各种样式类
+  @each $key, $value in $base-colors {
+    @include generate-class($key, $value);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: #fff;
+    color: #cccccc;
+    border: 1px solid #cccccc;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+
+  font-size: $fox-btn-font-size;
+
+  &.#{$fox-btn-prefix}-circle {
+    @include border-radius(50%);
+    width: 30px;
+    height: 30px;
+    //overflow: hidden;
+    padding: 0;
+    min-width: 0;
+  }
+
+  &.#{$fox-btn-prefix}-small {
+    font-size: $fox-btn-font-size - 2;
+    padding: 0 $fox-btn-font-size - 2;
+
+    &.#{$fox-btn-prefix}-circle {
+      width: 26px;
+      height: 26px;
+      padding: 0;
+    }
+  }
+
+  &.#{$fox-btn-prefix}-large {
+    font-size: $fox-btn-font-size + 2;
+    padding: 0 $fox-btn-font-size + 2;
+
+    &.#{$fox-btn-prefix}-circle {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+    }
+  }
+
+
+}
