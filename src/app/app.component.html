@@ -26,5 +26,17 @@
 
 
 <a fox-button [foxType]="'danger'" class="custom">你好</a>
-<a fox-button [foxType]="'danger'" class="custom" [foxShape]="'circle'">你好11111111111</a>
+<a fox-button [foxType]="'danger'" class="custom" [foxShape]="'circle'">112</a>
 
+<fox-radio-group [(ngModel)]="test">
+  <label fox-radio [foxValue]="'A'">
+    你好
+  </label>
+
+  <label fox-radio [foxValue]="'B'">
+    你好
+  </label>
+</fox-radio-group>
+
+
+{{test}}
