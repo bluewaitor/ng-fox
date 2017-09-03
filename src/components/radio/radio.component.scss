@@ -1,0 +1,13 @@
+$fox-radio-prefix: fox-radio;
+
+.#{$fox-radio-prefix} {
+    display: inline-block;
+
+    input[type=radio] {
+        opacity: 0;
+    }
+
+    &.#{$fox-radio-prefix}-checked {
+        color: red;
+    }
+}
