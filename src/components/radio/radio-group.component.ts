@@ -55,7 +55,6 @@ export class FoxRadioGroupComponent implements OnInit, AfterContentInit, Control
   }
 
   ngAfterContentInit(): void {
-    console.log('111');
     this._radios.forEach((radio) => {
       radio.foxChecked = radio.foxValue === this._value;
     });

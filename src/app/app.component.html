@@ -29,12 +29,20 @@
 <a fox-button [foxType]="'danger'" class="custom" [foxShape]="'circle'">112</a>
 
 <fox-radio-group [(ngModel)]="test">
-  <label fox-radio [foxValue]="'A'">
-    你好
+  <label fox-radio [foxValue]="'A'" [ngStyle]="{fontSize: '20px'}">
+    <span>A</span>
   </label>
 
   <label fox-radio [foxValue]="'B'">
-    你好
+    B
+  </label>
+
+  <label fox-radio [foxValue]="'C'" [foxDisabled]="true">
+    C
+  </label>
+
+  <label fox-radio [foxValue]="'D'">
+    D
   </label>
 </fox-radio-group>
 

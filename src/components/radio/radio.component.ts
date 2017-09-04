@@ -78,6 +78,9 @@ export class FoxRadioComponent implements OnInit, AfterContentInit {
     if (this.foxChecked) {
       _classList.push(`${this._foxRadioClass}-checked`);
     }
+    if (this.foxDisabled) {
+      _classList.push(`${this._foxRadioClass}-disabled`);
+    }
     _classList.forEach(_className => {
       if (_className) {
         this._renderer.addClass(this._el, _className);

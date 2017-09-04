@@ -1,13 +1,50 @@
+@import "../../assets/fonts/style.css";
+@import "../core/style/vendor-prefixes";
+@import "../core/theme/color-config";
 $fox-radio-prefix: fox-radio;
 
 .#{$fox-radio-prefix} {
-    display: inline-block;
+  display: inline-block;
+  white-space: nowrap;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  line-height: 1;
+  vertical-align: middle;
+  input[type=checkbox],
+  input[type=radio] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
 
-    input[type=radio] {
-        opacity: 0;
-    }
+  .#{$fox-radio-prefix}-inner {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    vertical-align: middle;
+  }
 
-    &.#{$fox-radio-prefix}-checked {
-        color: red;
+  i {
+    margin-right: 5px;
+  }
+  &.#{$fox-radio-prefix}-checked {
+    i {
+      color: $primary-color;
     }
+  }
+
+  &:hover {
+    i {
+      color: rgba($primary-color, .8);
+    };
+  }
+
+  &.#{$fox-radio-prefix}-disabled {
+    color: #CCCCCC;
+    i {
+      color: #CCCCCC;
+    }
+  }
 }
