@@ -12,7 +12,13 @@ import {FoxRadioGroupComponent} from './radio-group.component';
 
 @Component({
   selector: '[fox-radio]',
-  templateUrl: 'radio.component.html',
+  template: `
+    <span class="fox-radio-inner">
+      <i [ngClass]="{'icon-radio': !foxChecked, 'icon-radio-s': foxChecked}"></i>
+      <input type="radio" [(ngModel)]="foxChecked"/>
+      <ng-content></ng-content>
+    </span>
+  `,
   styleUrls: ['radio.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
