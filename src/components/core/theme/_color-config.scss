@@ -56,6 +56,7 @@ $base-colors: (
 $primary-color: map_get($base-colors, primary);
 $secondary-color: map_get($base-colors, secondary);
 
+$disabled-color: #cccccc;
 
 @each $key, $value in $base-colors {
   .#{$key} {

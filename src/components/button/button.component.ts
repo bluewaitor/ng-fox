@@ -5,7 +5,9 @@ import {
 
 @Component({
   selector: '[fox-button]',
-  templateUrl: 'button.component.html',
+  template: `
+    <span><ng-content></ng-content></span>
+  `,
   styleUrls: ['button.component.scss'],
   encapsulation: ViewEncapsulation.None
 })

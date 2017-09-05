@@ -1,4 +1,13 @@
-import {Component, ElementRef,AfterContentInit, HostListener, Input, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  AfterContentInit,
+  HostListener,
+  Input,
+  OnInit,
+  Renderer2,
+  ViewEncapsulation
+} from '@angular/core';
 import {FoxRadioGroupComponent} from './radio-group.component';
 
 @Component({

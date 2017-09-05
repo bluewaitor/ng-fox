@@ -42,9 +42,10 @@ $fox-radio-prefix: fox-radio;
   }
 
   &.#{$fox-radio-prefix}-disabled {
-    color: #CCCCCC;
+    color: $disabled-color;
+    cursor: not-allowed;
     i {
-      color: #CCCCCC;
+      color: $disabled-color;
     }
   }
 }
