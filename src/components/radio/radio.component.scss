@@ -25,30 +25,8 @@ $fox-radio-prefix: fox-radio;
     vertical-align: middle;
   }
 
-  i {
-    margin-right: 5px;
-    display: inline-block;
-    width: .6em;
-    height: .6em;
-    border: 1px solid currentColor;
-    @include border-radius(100%);
-    position: relative;
-  }
   &.#{$fox-radio-prefix}-checked {
-    i {
-      border-color: $primary-color;
-
-      &:after {
-        content: '';
-        width: .4em;
-        height: .4em;
-        top: .1em;
-        left: .1em;
-        background-color: $primary-color;
-        position: absolute;
-        @include border-radius(100%);
-      }
-    }
+    color: $primary-color;
   }
 
   &:hover {
@@ -60,11 +38,6 @@ $fox-radio-prefix: fox-radio;
   &.#{$fox-radio-prefix}-disabled {
     border-color: $disabled-color;
     cursor: not-allowed;
-    i {
-      border-color: $disabled-color;
-      &:after {
-        background-color: $disabled-color;
-      }
-    }
+    color: $disabled-color;
   }
 }

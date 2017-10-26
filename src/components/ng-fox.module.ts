@@ -10,10 +10,14 @@ export {ButtonModule} from './button/button.module';
 export {RadioModule} from './radio/radio.module';
 
 
+
+import {RootModule} from './root/root.module';
+
 @NgModule({
   exports: [
     ButtonModule,
-    RadioModule
+    RadioModule,
+    RootModule
   ]
 })
 export class NgFoxModule {
