@@ -1,5 +1,5 @@
-@import "../core/style/vendor-prefixes";
-@import "../core/theme/color-config";
+@import "../style/mixins/_transition";
+@import "../style/theme/color-config";
 $fox-radio-prefix: fox-radio;
 
 .#{$fox-radio-prefix} {

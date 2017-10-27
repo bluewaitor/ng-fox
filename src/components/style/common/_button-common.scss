@@ -1,4 +1,4 @@
-@import "./vendor-prefixes";
+@import "../mixins/index";
 
 @mixin fox-button-reset {
   @include user-select;

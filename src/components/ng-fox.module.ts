@@ -9,15 +9,17 @@ import {RadioModule} from './radio/radio.module';
 export {ButtonModule} from './button/button.module';
 export {RadioModule} from './radio/radio.module';
 
-
+export {OverlayModule} from './core/overlay/overlay.module';
 
 import {RootModule} from './root/root.module';
+import {OverlayModule} from './core/overlay/overlay.module';
 
 @NgModule({
   exports: [
     ButtonModule,
     RadioModule,
-    RootModule
+    RootModule,
+    OverlayModule
   ]
 })
 export class NgFoxModule {
